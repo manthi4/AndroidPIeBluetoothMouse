@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/PerProjects/SandBox_BluetoothChat/Application/src/main/res/layout-w720dp/activity_main.xml" value="0.23236331569664903" />
+        <entry key="..\:/PerProjects/SandBox_BluetoothChat/Application/src/main/res/layout/activity_device_list.xml" value="0.1956521739130435" />
+        <entry key="..\:/PerProjects/SandBox_BluetoothChat/Application/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
+        <entry key="..\:/PerProjects/SandBox_BluetoothChat/Application/src/main/res/layout/device_name.xml" value="0.22327898550724637" />
+        <entry key="..\:/PerProjects/SandBox_BluetoothChat/Application/src/main/res/layout/fragment_bluetooth_chat.xml" value="0.22327898550724637" />
+        <entry key="..\:/PerProjects/SandBox_BluetoothChat/Application/src/main/res/layout/message.xml" value="0.22327898550724637" />
+        <entry key="..\:/PerProjects/SandBox_BluetoothChat/Application/src/main/res/menu/bluetooth_chat.xml" value="0.27447916666666666" />
+        <entry key="..\:/PerProjects/SandBox_BluetoothChat/Application/src/main/res/menu/main.xml" value="0.27447916666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
