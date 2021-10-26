@@ -25,12 +25,15 @@ import android.bluetooth.BluetoothProfile;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.RequiresApi;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.common.activities.SampleActivityBase;
 import com.example.android.common.logger.Log;
@@ -40,11 +43,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Executor;
+import java.util.stream.Collectors;
+
+import io.github.controlwear.virtual.joystick.android.JoystickView;
 
 /**
  * A simple launcher activity containing a summary sample description, sample log and a custom
-// * { @ link Fragment} which can display a view.
-// * <p>
+ * // * { @ link Fragment} which can display a view.
+ * // * <p>
  * For devices with displays with a width of 720dp or greater, the sample log is always visible,
  * on other devices it's visibility is controlled by an item on the Action Bar.
  */
@@ -81,7 +87,7 @@ public class MainActivity extends SampleActivityBase {
     };
 
     public static final String TAG = "MainActivity";
-    String[] ListElements = new String[] {
+    String[] ListElements = new String[]{
             "Hello",
             "List created",
     };
@@ -90,14 +96,20 @@ public class MainActivity extends SampleActivityBase {
     private BluetoothHidDevice mBlHidDevice;
     private BluetoothDevice mBtDevice;
 
-    private void getProxy(List<String> ListElementsArrayList, ArrayAdapter<String> adapter) {
+    final List<String> ListElementsArrayList = new ArrayList<>(Arrays.asList(ListElements));
+
+    private void getProxy() { //List<String> ListElementsArrayList, ArrayAdapter<String> adapter
+        // If the adapter is null, then Bluetooth is not supported
+        System.out.println("getting Proxy");
+
+        if (mBluetoothAdapter == null) {
+//            onScreenLog(ListElementsArrayList,  adapter, "Bluetooth is not available");
+            System.out.println("Bluetooth is not available");
+        }
         if (!mBluetoothAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
         }
-        // If the adapter is null, then Bluetooth is not supported
-        if (mBluetoothAdapter == null) {
-            onScreenLog(ListElementsArrayList,  adapter, "Bluetooth is not available");
-        }
+
 
         mBluetoothAdapter.getProfileProxy(this, new BluetoothProfile.ServiceListener() {
             @RequiresApi(api = Build.VERSION_CODES.P)
@@ -107,9 +119,10 @@ public class MainActivity extends SampleActivityBase {
                     Log.d(TAG, "Got HID device");
                     mBlHidDevice = (BluetoothHidDevice) proxy;
                     // see next section
-                    registerApp(ListElementsArrayList , adapter, mBlHidDevice);
+                    registerApp(mBlHidDevice);
                 }
             }
+
             @Override
             public void onServiceDisconnected(int profile) {
                 if (profile == BluetoothProfile.HID_DEVICE) {
@@ -120,7 +133,7 @@ public class MainActivity extends SampleActivityBase {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
-    public synchronized void registerApp(List<String> ListElementsArrayList, ArrayAdapter<String> adapter, final BluetoothHidDevice bleHidD){
+    public synchronized void registerApp(final BluetoothHidDevice bleHidD) {
 
         BluetoothHidDeviceAppSdpSettings sdp = new BluetoothHidDeviceAppSdpSettings(
                 "BlueExp",
@@ -135,6 +148,7 @@ public class MainActivity extends SampleActivityBase {
             @Override
             public void execute(Runnable runnable) {
                 runnable.run();
+                listDevices();
             }
         };
 
@@ -148,153 +162,167 @@ public class MainActivity extends SampleActivityBase {
             }
 
             @Override
-            public void onSetReport (BluetoothDevice device,
-                                     byte type,
-                                     byte id,
-                                     byte[] data){
-                onScreenLog(ListElementsArrayList, adapter, "asked for set Report");
+            public void onSetReport(BluetoothDevice device,
+                                    byte type,
+                                    byte id,
+                                    byte[] data) {
+//                onScreenLog(ListElementsArrayList, adapter, "asked for set Report");
             }
 
             @Override
             public void onConnectionStateChanged(BluetoothDevice device, final int state) {
-                onScreenLog(ListElementsArrayList, adapter, "onConnectionStateChanged: device= " + device + " state= " + state);
+//                onScreenLog(ListElementsArrayList, adapter, "onConnectionStateChanged: device= " + device + " state= " + state);
 //                android.util.Log.v(TAG, "onConnectionStateChanged: device=" + device + " state=" + state);
             }
         });
 
-        onScreenLog(ListElementsArrayList, adapter, registered?"app registered" : "registration failed :(");
+//        onScreenLog(ListElementsArrayList, adapter, registered?"app registered" : "registration failed :(");
+        System.out.println("hid profile registered");
     }
 
-    private void listDevices(List<String> ListElementsArrayList, ArrayAdapter<String> adapter){
-        Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
-        for(BluetoothDevice device : pairedDevices){
-            onScreenLog(ListElementsArrayList,  adapter,  "name:" + device.getName()+ " " + mBlHidDevice.getConnectionState(device));
-        }
+    private void listDevices() {
+        List<String> listo = mBluetoothAdapter.getBondedDevices().stream()
+                .map(d -> String.format("name: '%s' %s", d.getName(), mBlHidDevice.getConnectionState(d)))
+                .collect(Collectors.toList());
+        ListElementsArrayList.clear();
+        ListElementsArrayList.addAll(listo);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
-    private void btConnect(List<String> ListElementsArrayList, ArrayAdapter<String> adapter) {
+    private void btConnect(String deviceName) {
         BluetoothDevice device;
         Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
-        for(BluetoothDevice device1 : pairedDevices){
-            if(device1.getName().equals("MANRHIOWO")){
-                onScreenLog(ListElementsArrayList,  adapter, "got it");
-                device = device1;
+        device = mBluetoothAdapter.getBondedDevices().stream()
+                .filter(d -> d.getName().equals(deviceName)).findAny().orElse(null);
 
-                android.util.Log.i(TAG, "btConnect: device=" + device);
+        android.util.Log.i(TAG, "btConnect: device=" + device);
 
-                // disconnect from everything else
-                for (BluetoothDevice btDev : mBlHidDevice.getDevicesMatchingConnectionStates(new int[]{
-                        BluetoothProfile.STATE_CONNECTING,
-                        BluetoothProfile.STATE_CONNECTED
-                })) {
-                    mBlHidDevice.disconnect(btDev);
-                }
-                if (device != null) {
-                    mBtDevice = device;
-                    Boolean connected = mBlHidDevice.connect(device);
-                    onScreenLog(ListElementsArrayList, adapter, connected?"connected!":"failed to connect :(");
-                }
-            }
+        // disconnect from everything else
+        for (BluetoothDevice btDev : mBlHidDevice.getDevicesMatchingConnectionStates(new int[]{
+                BluetoothProfile.STATE_CONNECTING,
+                BluetoothProfile.STATE_CONNECTED
+        })) {
+            mBlHidDevice.disconnect(btDev);
         }
-
-
+        if (device != null) {
+            mBtDevice = device;
+            Boolean connected = mBlHidDevice.connect(device);
+            System.out.println(connected ? "connected! " : "failed to connect " + deviceName);
+        }
     }
 
 
-    private void moveCommand(List<String> ListElementsArrayList, ArrayAdapter<String> adapter){
+    private void moveCommand(int x, int y) {
+        char signedx = (char) x;
+        char signedy = (char) y;
         byte[] data = new byte[]{
-                (byte)0, (byte)0x14, (byte)0x14,
+                (byte) 0, (byte) (signedx & 0xFF), (byte) (signedy & 0xFF),
         };
 
         Boolean sent = mBlHidDevice.sendReport(mBtDevice, 0, data);
-        onScreenLog(ListElementsArrayList, adapter, sent?"command sent":"command failed to send");
-
     }
 
-    private void clickCommand(List<String> ListElementsArrayList, ArrayAdapter<String> adapter){
-        byte[] data = new byte[]{
-                (byte)0b1, (byte)0, (byte)0,
-        };
+    private void clickCommand(int click) { // 1= L, 2 = R
+        byte[] data = (click == 1) ?
+                new byte[]{(byte) 0b1, (byte) 0, (byte) 0,}
+                        :
+                new byte[]{(byte) 0b10, (byte) 0, (byte) 0,};
 
         Boolean sent = mBlHidDevice.sendReport(mBtDevice, 0, data);
-        onScreenLog(ListElementsArrayList, adapter, sent?"command sent":"command failed to send");
     }
 
-    private void onScreenLog(List<String> ListElementsArrayList, ArrayAdapter<String> adapter, String s){
-        ListElementsArrayList.add(s);
-        adapter.notifyDataSetChanged();
-        System.out.println( s);
+    private void clickReleaseCommand() {
+        byte[] data = new byte[]{
+                (byte) 0, (byte) 0, (byte) 0,
+        };
+        Boolean sent = mBlHidDevice.sendReport(mBtDevice, 0, data);
     }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getProxy();
+
         setContentView(R.layout.fragment_bluetooth_chat);
+
+        RecyclerView recV = findViewById(R.id.recview);
 
         ListView listview = findViewById(R.id.listV1);
 
-        final List<String> ListElementsArrayList = new ArrayList<>(Arrays.asList(ListElements));
         final ArrayAdapter<String> adapter = new ArrayAdapter<>
                 (MainActivity.this, android.R.layout.simple_list_item_1, ListElementsArrayList);
         listview.setAdapter(adapter);
 
-
-        Button bt = findViewById(R.id.button_send);
-        bt.setOnClickListener(new View.OnClickListener() {
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                onScreenLog(ListElementsArrayList,  adapter, "proxy button clicked");
-                getProxy(ListElementsArrayList,  adapter);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String element = ListElementsArrayList.get(i);
+                String deviceName = element.substring(element.indexOf("'") + 1, element.lastIndexOf("'"));
+                btConnect(deviceName);
             }
         });
-
         Button bt2 = findViewById(R.id.ListConnButton);
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onScreenLog(ListElementsArrayList,  adapter, "listing devices: ");
-                listDevices(ListElementsArrayList,  adapter);
+                listDevices();
+                adapter.notifyDataSetChanged();
             }
         });
 
-        Button bt3 = findViewById(R.id.button2);
-        bt3.setOnClickListener(new View.OnClickListener() {
+
+        JoystickView joystick = (JoystickView) findViewById(R.id.joystickView);
+        joystick.setOnMoveListener(new JoystickView.OnMoveListener() {
             @Override
-            public void onClick(View view) {
-                onScreenLog(ListElementsArrayList,  adapter, "bt2 button clicked");
-                btConnect(ListElementsArrayList,  adapter);
+            public void onMove(int angle, int strength) {
+
+                if(strength < 20){
+                    return;
+                }
+                int x = (int) (strength * Math.cos(Math.toRadians(angle)));
+                int y = (int) (strength * Math.sin(Math.toRadians(angle)));
+                System.out.println(angle+" "+strength+ " " + x +" "+ y);
+                moveCommand(x/10, -y/10);
+//                System.out.println(x+" "+y);
             }
-        });
+        }, 17);
 
         Button bt4 = findViewById(R.id.command);
-        bt4.setOnClickListener(new View.OnClickListener() {
+        bt4.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                onScreenLog(ListElementsArrayList,  adapter, "move button clicked");
-                moveCommand(ListElementsArrayList,  adapter);
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        clickCommand(1);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        clickReleaseCommand();
+                    case MotionEvent.ACTION_CANCEL:
+                        clickReleaseCommand();
+                        break;
+                }
+                return false;
             }
         });
 
         Button bt5 = findViewById(R.id.lclickButton);
-        bt5.setOnClickListener(new View.OnClickListener() {
+        bt5.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                onScreenLog(ListElementsArrayList,  adapter, "click button clicked");
-                clickCommand(ListElementsArrayList,  adapter);
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        clickCommand(2);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        clickReleaseCommand();
+                    case MotionEvent.ACTION_CANCEL:
+                        clickReleaseCommand();
+                        break;
+                }
+                return false;
             }
         });
 
-
-
-        if (savedInstanceState == null) {
-            onScreenLog(ListElementsArrayList,  adapter, "no saved instance");
-        }else{
-            onScreenLog(ListElementsArrayList,  adapter, "saved instance");
-        }
     }
-
-
-
 }

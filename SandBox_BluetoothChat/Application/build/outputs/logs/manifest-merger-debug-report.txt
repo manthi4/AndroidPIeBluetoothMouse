@@ -1,10 +1,11 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-54:12
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-54:12
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-54:12
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-54:12
+ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-49:12
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-49:12
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-49:12
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-49:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\54448c056128a2c935b0bb4d9a555ae7\appcompat-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [io.github.controlwear:virtualjoystick:1.10.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\2b11ed4f84f0cc500656b014a462d007\jetified-virtualjoystick-1.10.1\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\743d2645c3f1bb02b7a57f08f911970e\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\774f4f26307c77113f74067e559ce529\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\9bcad8df747e7e541c668492e993a22d\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -24,35 +25,35 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\suman\.gradle\ca
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\e3a7d3b723deff8b2b903c0665652c62\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\c9ce6976a0ee114a7df6a78a9d188526\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\750b7b3e6ba5087b346f6e90470bbb4c\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-54:12
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-54:12
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-54:12
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-49:12
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-49:12
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-49:12
 	package
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:20:5-48
-		INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
-		INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:20:5-48
+		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:22:5-30
-		INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
-		INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:22:5-30
+		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:19:5-51
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:19:5-51
 	xmlns:android
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:18:5-63
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:18:5-63
 	android:versionCode
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:21:5-28
-		INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
-		INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:21:5-28
+		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:26:5-74
+ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:26:5-74
 	android:name
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:26:22-71
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:26:22-71
 uses-permission#android.permission.BLUETOOTH
-ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:27:5-68
+ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:27:5-68
 	android:name
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:27:22-65
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:27:22-65
 application
-ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:29:5-52:19
+ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:29:5-47:19
 MERGED from [androidx.core:core:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\476e418bae6a1646436b14a2350f3166\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\476e418bae6a1646436b14a2350f3166\core-1.1.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\c7739dfe0a1efd64a0dd260a875d3ca5\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -60,49 +61,41 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\su
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\476e418bae6a1646436b14a2350f3166\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:32:9-41
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:32:9-41
 	tools:ignore
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:34:9-48
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:34:9-48
 	android:icon
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:31:9-45
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:31:9-45
 	android:allowBackup
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:30:9-35
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:30:9-35
 	android:theme
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:33:9-40
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:33:9-40
 activity#com.example.android.bluetoothchat.MainActivity
-ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:36:9-44:20
+ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:36:9-44:20
 	android:label
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:39:13-45
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:39:13-45
 	android:configChanges
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:38:13-63
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:38:13-63
 	android:name
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:37:13-41
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:37:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:40:13-43:29
+ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:40:13-43:29
 action#android.intent.action.MAIN
-ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:41:17-69
+ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:41:17-69
 	android:name
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:41:25-66
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:41:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:42:17-77
+ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:42:17-77
 	android:name
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:42:27-74
-activity#com.example.android.bluetoothchat.DeviceListActivity
-ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:46:9-50:64
-	android:label
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:49:13-50
-	android:configChanges
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:48:13-63
-	android:theme
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:50:13-61
-	android:name
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:47:13-47
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:42:27-74
 uses-sdk
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\54448c056128a2c935b0bb4d9a555ae7\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\54448c056128a2c935b0bb4d9a555ae7\appcompat-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [io.github.controlwear:virtualjoystick:1.10.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\2b11ed4f84f0cc500656b014a462d007\jetified-virtualjoystick-1.10.1\AndroidManifest.xml:7:5-9:41
+MERGED from [io.github.controlwear:virtualjoystick:1.10.1] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\2b11ed4f84f0cc500656b014a462d007\jetified-virtualjoystick-1.10.1\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\743d2645c3f1bb02b7a57f08f911970e\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\743d2645c3f1bb02b7a57f08f911970e\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\774f4f26307c77113f74067e559ce529\jetified-appcompat-resources-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -141,13 +134,13 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\suman\.g
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\c9ce6976a0ee114a7df6a78a9d188526\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\750b7b3e6ba5087b346f6e90470bbb4c\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\suman\.gradle\caches\transforms-2\files-2.1\750b7b3e6ba5087b346f6e90470bbb4c\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
-INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
-		INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
-		ADDED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
-		INJECTED from C:\PerProjects\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
+		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml

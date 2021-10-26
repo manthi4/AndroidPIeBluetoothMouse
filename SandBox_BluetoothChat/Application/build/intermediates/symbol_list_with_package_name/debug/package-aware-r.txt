@@ -23,6 +23,19 @@ anim btn_radio_to_off_mtrl_ring_outer_path_animation
 anim btn_radio_to_on_mtrl_dot_group_animation
 anim btn_radio_to_on_mtrl_ring_outer_animation
 anim btn_radio_to_on_mtrl_ring_outer_path_animation
+attr JV_autoReCenterButton
+attr JV_backgroundColor
+attr JV_backgroundSizeRatio
+attr JV_borderAlpha
+attr JV_borderColor
+attr JV_borderWidth
+attr JV_buttonColor
+attr JV_buttonDirection
+attr JV_buttonImage
+attr JV_buttonSizeRatio
+attr JV_buttonStickToBorder
+attr JV_enabled
+attr JV_fixedCenter
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -688,11 +701,9 @@ id always
 id async
 id beginning
 id blocking
+id both
 id bottom
-id button2
 id buttonPanel
-id button_scan
-id button_send
 id center_vertical
 id checkbox
 id checked
@@ -716,6 +727,7 @@ id forever
 id group_divider
 id home
 id homeAsUp
+id horizontal
 id icon
 id icon_group
 id ifRoom
@@ -723,6 +735,7 @@ id image
 id info
 id insecure_connect_scan
 id italic
+id joystickView
 id lclickButton
 id line1
 id line3
@@ -735,7 +748,6 @@ id message
 id middle
 id multiply
 id never
-id new_devices
 id none
 id normal
 id notification_background
@@ -743,7 +755,6 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
-id paired_devices
 id parentPanel
 id progress_circular
 id progress_horizontal
@@ -796,8 +807,6 @@ id textSpacerNoTitle
 id time
 id title
 id titleDividerNoCustom
-id title_new_devices
-id title_paired_devices
 id title_template
 id top
 id topPanel
@@ -805,6 +814,7 @@ id unchecked
 id uniform
 id up
 id useLogo
+id vertical
 id withText
 id wrap_content
 integer abc_config_activityDefaultDur
@@ -847,12 +857,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_device_list
 layout activity_main
 layout custom_dialog
 layout device_name
 layout fragment_bluetooth_chat
-layout message
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
@@ -1292,6 +1300,7 @@ styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchSt
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
+styleable JoystickView JV_autoReCenterButton JV_backgroundColor JV_backgroundSizeRatio JV_borderAlpha JV_borderColor JV_borderWidth JV_buttonColor JV_buttonDirection JV_buttonImage JV_buttonSizeRatio JV_buttonStickToBorder JV_enabled JV_fixedCenter
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset

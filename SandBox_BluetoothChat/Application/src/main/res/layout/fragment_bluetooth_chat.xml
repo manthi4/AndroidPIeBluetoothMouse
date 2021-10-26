@@ -15,6 +15,7 @@
  limitations under the License.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,29 +24,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button_send"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="proxy"
-            tools:layout_weight="1" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/ListConnButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="List"
-            tools:layout_weight="1" />
+            <Button
+                android:id="@+id/ListConnButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="Refresh List" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Connect" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,15 +52,42 @@
                 android:id="@+id/command"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="move"
-                tools:layout_weight="1" />
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="L click" />
 
             <Button
                 android:id="@+id/lclickButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:text="click" />
+                android:text="R click" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <io.github.controlwear.virtual.joystick.android.JoystickView
+                android:id="@+id/joystickView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:JV_backgroundColor="#8CCD8E"
+                app:JV_borderColor="#040404"
+                app:JV_buttonColor="#0E5E12" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
         </LinearLayout>
 
     </LinearLayout>
@@ -72,6 +95,14 @@
     <ListView
         android:id="@+id/listV1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="2" >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </ListView>
 
 </LinearLayout>

@@ -47,11 +47,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.android.bluetoothchat.DeviceListActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:label="@string/select_device"
-            android:theme="@android:style/Theme.Holo.Dialog" />
     </application>
 
 </manifest>

@@ -1,10 +1,5 @@
 com/example/android/common/logger/LogNode.java
  com.example.android.common.logger.LogNode
-com/example/android/bluetoothchat/DeviceListActivity.java
- com.example.android.bluetoothchat.DeviceListActivity
- com.example.android.bluetoothchat.DeviceListActivity$1
- com.example.android.bluetoothchat.DeviceListActivity$2
- com.example.android.bluetoothchat.DeviceListActivity$3
 com/example/android/bluetoothchat/MainActivity.java
  com.example.android.bluetoothchat.MainActivity
  com.example.android.bluetoothchat.MainActivity$1

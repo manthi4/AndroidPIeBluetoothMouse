@@ -32,4 +32,9 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'io.github.controlwear:virtualjoystick:1.10.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
 }
