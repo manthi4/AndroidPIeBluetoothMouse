@@ -8,6 +8,10 @@
         "source": "C:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\src\\main\\res\\drawable-xhdpi\\ic_action_device_access_bluetooth_searching.png"
     },
     {
+        "merged": "C:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_bdevicecard.xml.flat",
+        "source": "C:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\src\\main\\res\\layout\\bdevicecard.xml"
+    },
+    {
         "merged": "C:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_action_device_access_bluetooth_searching.png.flat",
         "source": "C:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\src\\main\\res\\drawable-xxhdpi\\ic_action_device_access_bluetooth_searching.png"
     },

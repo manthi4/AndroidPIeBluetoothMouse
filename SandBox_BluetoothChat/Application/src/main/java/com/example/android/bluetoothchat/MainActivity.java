@@ -23,6 +23,7 @@ import android.bluetooth.BluetoothHidDevice;
 import android.bluetooth.BluetoothHidDeviceAppSdpSettings;
 import android.bluetooth.BluetoothProfile;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -32,7 +33,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.common.activities.SampleActivityBase;
@@ -97,6 +100,7 @@ public class MainActivity extends SampleActivityBase {
     private BluetoothDevice mBtDevice;
 
     final List<String> ListElementsArrayList = new ArrayList<>(Arrays.asList(ListElements));
+    final ArrayList<Bdevice> ListCardsArrayList = new ArrayList<>();
 
     private void getProxy() { //List<String> ListElementsArrayList, ArrayAdapter<String> adapter
         // If the adapter is null, then Bluetooth is not supported
@@ -186,12 +190,17 @@ public class MainActivity extends SampleActivityBase {
                 .collect(Collectors.toList());
         ListElementsArrayList.clear();
         ListElementsArrayList.addAll(listo);
+
+        List<Bdevice> cardsData = mBluetoothAdapter.getBondedDevices().stream()
+                .map(d -> new Bdevice(d.getName(), mBlHidDevice.getConnectionState(d)))
+                .collect(Collectors.toList());
+        ListCardsArrayList.clear();
+        ListCardsArrayList.addAll(cardsData);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
-    private void btConnect(String deviceName) {
+    public void btConnect(String deviceName) {
         BluetoothDevice device;
-        Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
         device = mBluetoothAdapter.getBondedDevices().stream()
                 .filter(d -> d.getName().equals(deviceName)).findAny().orElse(null);
 
@@ -206,8 +215,7 @@ public class MainActivity extends SampleActivityBase {
         }
         if (device != null) {
             mBtDevice = device;
-            Boolean connected = mBlHidDevice.connect(device);
-            System.out.println(connected ? "connected! " : "failed to connect " + deviceName);
+            Boolean connectionRequested = mBlHidDevice.connect(device);
         }
     }
 
@@ -247,27 +255,27 @@ public class MainActivity extends SampleActivityBase {
         setContentView(R.layout.fragment_bluetooth_chat);
 
         RecyclerView recV = findViewById(R.id.recview);
-
-        ListView listview = findViewById(R.id.listV1);
-
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>
-                (MainActivity.this, android.R.layout.simple_list_item_1, ListElementsArrayList);
-        listview.setAdapter(adapter);
-
-        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//        ListCardsArrayList;
+        BDeviceCardAdapter cardAdapter = new BDeviceCardAdapter(MainActivity.this, ListCardsArrayList, new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String element = ListElementsArrayList.get(i);
-                String deviceName = element.substring(element.indexOf("'") + 1, element.lastIndexOf("'"));
-                btConnect(deviceName);
+                Bdevice element = ListCardsArrayList.get(i);
+                btConnect(element.deviceName);
             }
         });
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        recV.setLayoutManager(linearLayoutManager);
+        recV.setAdapter(cardAdapter);
+
+
+
         Button bt2 = findViewById(R.id.ListConnButton);
         bt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listDevices();
-                adapter.notifyDataSetChanged();
+                cardAdapter.notifyDataSetChanged();
             }
         });
 

@@ -1,3 +1,5 @@
+com/example/android/bluetoothchat/Bdevice.java
+ com.example.android.bluetoothchat.Bdevice
 com/example/android/common/logger/LogNode.java
  com.example.android.common.logger.LogNode
 com/example/android/bluetoothchat/MainActivity.java
@@ -19,6 +21,10 @@ com/example/android/common/logger/LogView.java
  com.example.android.common.logger.LogView$1
 com/example/android/bluetoothchat/Constants.java
  com.example.android.bluetoothchat.Constants
+com/example/android/bluetoothchat/BDeviceCardAdapter.java
+ com.example.android.bluetoothchat.BDeviceCardAdapter
+ com.example.android.bluetoothchat.BDeviceCardAdapter$1
+ com.example.android.bluetoothchat.BDeviceCardAdapter$Viewholder
 com/example/android/common/logger/LogFragment.java
  com.example.android.common.logger.LogFragment
  com.example.android.common.logger.LogFragment$1
