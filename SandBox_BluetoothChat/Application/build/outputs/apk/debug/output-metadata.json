@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.android.bluetoothchat",
+  "applicationId": "com.example.android.bluetoothmouse",
   "variantName": "debug",
   "elements": [
     {

@@ -1,4 +1,4 @@
-com.example.android.bluetoothchat
+com.example.android.bluetoothmouse
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1191,6 +1191,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id secure_connect_scan
+id seekBar
 id select_dialog_listview
 id sharedValueSet
 id sharedValueUnset
@@ -1303,7 +1304,7 @@ layout activity_main
 layout bdevicecard
 layout custom_dialog
 layout device_name
-layout fragment_bluetooth_chat
+layout fragment_bluetooth_control
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

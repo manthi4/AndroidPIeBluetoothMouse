@@ -1,63 +1,25 @@
-/*
- * Copyright 2013 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-
-package com.example.android.bluetoothchat;
+package com.example.android.bluetoothmouse;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothHidDevice;
 import android.bluetooth.BluetoothHidDeviceAppSdpSettings;
 import android.bluetooth.BluetoothProfile;
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
-import android.os.Bundle;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.android.common.activities.SampleActivityBase;
 import com.example.android.common.logger.Log;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.stream.Collectors;
 
-import io.github.controlwear.virtual.joystick.android.JoystickView;
+public class BleMouse {
+    public static final String TAG = "BleMouse";
 
-/**
- * A simple launcher activity containing a summary sample description, sample log and a custom
- * // * { @ link Fragment} which can display a view.
- * // * <p>
- * For devices with displays with a width of 720dp or greater, the sample log is always visible,
- * on other devices it's visibility is controlled by an item on the Action Bar.
- */
-public class MainActivity extends SampleActivityBase {
 
     private static final byte[] descriptor = new byte[]{
             0x05, 0x01,                    // USAGE_PAGE (Generic Desktop)
@@ -89,25 +51,20 @@ public class MainActivity extends SampleActivityBase {
 
     };
 
-    public static final String TAG = "MainActivity";
-    String[] ListElements = new String[]{
-            "Hello",
-            "List created",
-    };
-
     private BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     private BluetoothHidDevice mBlHidDevice;
     private BluetoothDevice mBtDevice;
+    private Context context;
 
-    final List<String> ListElementsArrayList = new ArrayList<>(Arrays.asList(ListElements));
-    final ArrayList<Bdevice> ListCardsArrayList = new ArrayList<>();
+    public  BleMouse(Context context){
+        this.context = context;
+    }
 
-    private void getProxy() { //List<String> ListElementsArrayList, ArrayAdapter<String> adapter
+    public void getProxy() {
         // If the adapter is null, then Bluetooth is not supported
         System.out.println("getting Proxy");
 
         if (mBluetoothAdapter == null) {
-//            onScreenLog(ListElementsArrayList,  adapter, "Bluetooth is not available");
             System.out.println("Bluetooth is not available");
         }
         if (!mBluetoothAdapter.isEnabled()) {
@@ -115,7 +72,7 @@ public class MainActivity extends SampleActivityBase {
         }
 
 
-        mBluetoothAdapter.getProfileProxy(this, new BluetoothProfile.ServiceListener() {
+        mBluetoothAdapter.getProfileProxy(context, new BluetoothProfile.ServiceListener() {
             @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onServiceConnected(int profile, BluetoothProfile proxy) {
@@ -152,7 +109,6 @@ public class MainActivity extends SampleActivityBase {
             @Override
             public void execute(Runnable runnable) {
                 runnable.run();
-                listDevices();
             }
         };
 
@@ -184,20 +140,6 @@ public class MainActivity extends SampleActivityBase {
         System.out.println("hid profile registered");
     }
 
-    private void listDevices() {
-        List<String> listo = mBluetoothAdapter.getBondedDevices().stream()
-                .map(d -> String.format("name: '%s' %s", d.getName(), mBlHidDevice.getConnectionState(d)))
-                .collect(Collectors.toList());
-        ListElementsArrayList.clear();
-        ListElementsArrayList.addAll(listo);
-
-        List<Bdevice> cardsData = mBluetoothAdapter.getBondedDevices().stream()
-                .map(d -> new Bdevice(d.getName(), mBlHidDevice.getConnectionState(d)))
-                .collect(Collectors.toList());
-        ListCardsArrayList.clear();
-        ListCardsArrayList.addAll(cardsData);
-    }
-
     @RequiresApi(api = Build.VERSION_CODES.P)
     public void btConnect(String deviceName) {
         BluetoothDevice device;
@@ -213,14 +155,16 @@ public class MainActivity extends SampleActivityBase {
         })) {
             mBlHidDevice.disconnect(btDev);
         }
+
         if (device != null) {
             mBtDevice = device;
             Boolean connectionRequested = mBlHidDevice.connect(device);
+            android.util.Log.i(TAG, "connection requested: " + connectionRequested);
+
         }
     }
 
-
-    private void moveCommand(int x, int y) {
+    public void moveCommand(int x, int y) {
         char signedx = (char) x;
         char signedy = (char) y;
         byte[] data = new byte[]{
@@ -230,107 +174,25 @@ public class MainActivity extends SampleActivityBase {
         Boolean sent = mBlHidDevice.sendReport(mBtDevice, 0, data);
     }
 
-    private void clickCommand(int click) { // 1= L, 2 = R
+    public void clickCommand(int click) { // 1= L, 2 = R
         byte[] data = (click == 1) ?
                 new byte[]{(byte) 0b1, (byte) 0, (byte) 0,}
-                        :
+                :
                 new byte[]{(byte) 0b10, (byte) 0, (byte) 0,};
 
         Boolean sent = mBlHidDevice.sendReport(mBtDevice, 0, data);
     }
 
-    private void clickReleaseCommand() {
+    public void clickReleaseCommand() {
         byte[] data = new byte[]{
                 (byte) 0, (byte) 0, (byte) 0,
         };
         Boolean sent = mBlHidDevice.sendReport(mBtDevice, 0, data);
     }
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getProxy();
-
-        setContentView(R.layout.fragment_bluetooth_chat);
-
-        RecyclerView recV = findViewById(R.id.recview);
-//        ListCardsArrayList;
-        BDeviceCardAdapter cardAdapter = new BDeviceCardAdapter(MainActivity.this, ListCardsArrayList, new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Bdevice element = ListCardsArrayList.get(i);
-                btConnect(element.deviceName);
-            }
-        });
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recV.setLayoutManager(linearLayoutManager);
-        recV.setAdapter(cardAdapter);
-
-
-
-        Button bt2 = findViewById(R.id.ListConnButton);
-        bt2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listDevices();
-                cardAdapter.notifyDataSetChanged();
-            }
-        });
-
-
-        JoystickView joystick = (JoystickView) findViewById(R.id.joystickView);
-        joystick.setOnMoveListener(new JoystickView.OnMoveListener() {
-            @Override
-            public void onMove(int angle, int strength) {
-
-                if(strength < 20){
-                    return;
-                }
-                int x = (int) (strength * Math.cos(Math.toRadians(angle)));
-                int y = (int) (strength * Math.sin(Math.toRadians(angle)));
-                System.out.println(angle+" "+strength+ " " + x +" "+ y);
-                moveCommand(x/10, -y/10);
-//                System.out.println(x+" "+y);
-            }
-        }, 17);
-
-        Button bt4 = findViewById(R.id.command);
-        bt4.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        clickCommand(1);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        clickReleaseCommand();
-                    case MotionEvent.ACTION_CANCEL:
-                        clickReleaseCommand();
-                        break;
-                }
-                return false;
-            }
-        });
-
-        Button bt5 = findViewById(R.id.lclickButton);
-        bt5.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        clickCommand(2);
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        clickReleaseCommand();
-                    case MotionEvent.ACTION_CANCEL:
-                        clickReleaseCommand();
-                        break;
-                }
-                return false;
-            }
-        });
-
+    public List<Bdevice>  listDevices() {
+        return mBluetoothAdapter.getBondedDevices().stream()
+                .map(d -> new Bdevice(d.getName(), mBlHidDevice.getConnectionState(d)))
+                .collect(Collectors.toList());
     }
 }

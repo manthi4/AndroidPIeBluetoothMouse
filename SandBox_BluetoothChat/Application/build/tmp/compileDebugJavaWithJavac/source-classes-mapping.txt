@@ -1,33 +1,33 @@
-com/example/android/bluetoothchat/Bdevice.java
- com.example.android.bluetoothchat.Bdevice
 com/example/android/common/logger/LogNode.java
  com.example.android.common.logger.LogNode
-com/example/android/bluetoothchat/MainActivity.java
- com.example.android.bluetoothchat.MainActivity
- com.example.android.bluetoothchat.MainActivity$1
- com.example.android.bluetoothchat.MainActivity$2
- com.example.android.bluetoothchat.MainActivity$3
- com.example.android.bluetoothchat.MainActivity$4
- com.example.android.bluetoothchat.MainActivity$5
- com.example.android.bluetoothchat.MainActivity$6
- com.example.android.bluetoothchat.MainActivity$7
- com.example.android.bluetoothchat.MainActivity$8
+com/example/android/bluetoothmouse/BleMouse.java
+ com.example.android.bluetoothmouse.BleMouse
+ com.example.android.bluetoothmouse.BleMouse$1
+ com.example.android.bluetoothmouse.BleMouse$2
+ com.example.android.bluetoothmouse.BleMouse$3
+com/example/android/bluetoothmouse/BuildConfig.java
+ com.example.android.bluetoothmouse.BuildConfig
+com/example/android/bluetoothmouse/BDeviceCardAdapter.java
+ com.example.android.bluetoothmouse.BDeviceCardAdapter
+ com.example.android.bluetoothmouse.BDeviceCardAdapter$1
+ com.example.android.bluetoothmouse.BDeviceCardAdapter$Viewholder
 com/example/android/common/logger/Log.java
  com.example.android.common.logger.Log
-com/example/android/bluetoothchat/BuildConfig.java
- com.example.android.bluetoothchat.BuildConfig
 com/example/android/common/logger/LogView.java
  com.example.android.common.logger.LogView
  com.example.android.common.logger.LogView$1
-com/example/android/bluetoothchat/Constants.java
- com.example.android.bluetoothchat.Constants
-com/example/android/bluetoothchat/BDeviceCardAdapter.java
- com.example.android.bluetoothchat.BDeviceCardAdapter
- com.example.android.bluetoothchat.BDeviceCardAdapter$1
- com.example.android.bluetoothchat.BDeviceCardAdapter$Viewholder
+com/example/android/bluetoothmouse/Bdevice.java
+ com.example.android.bluetoothmouse.Bdevice
 com/example/android/common/logger/LogFragment.java
  com.example.android.common.logger.LogFragment
  com.example.android.common.logger.LogFragment$1
+com/example/android/bluetoothmouse/MainActivity.java
+ com.example.android.bluetoothmouse.MainActivity
+ com.example.android.bluetoothmouse.MainActivity$1
+ com.example.android.bluetoothmouse.MainActivity$2
+ com.example.android.bluetoothmouse.MainActivity$3
+ com.example.android.bluetoothmouse.MainActivity$4
+ com.example.android.bluetoothmouse.MainActivity$5
 com/example/android/common/activities/SampleActivityBase.java
  com.example.android.common.activities.SampleActivityBase
 com/example/android/common/logger/LogWrapper.java

@@ -1,4 +1,4 @@
-package com.example.android.bluetoothchat;
+package com.example.android.bluetoothmouse;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

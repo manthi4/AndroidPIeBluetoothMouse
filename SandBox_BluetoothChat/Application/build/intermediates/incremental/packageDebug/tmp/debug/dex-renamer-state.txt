@@ -1,11 +1,9 @@
-#Tue Oct 26 23:37:37 EDT 2021
-path.4=7/classes.dex
-path.3=6/classes.dex
+#Sun Aug 21 09:42:59 EDT 2022
+path.3=7/classes.dex
 path.2=14/classes.dex
 path.1=0/classes.dex
 path.0=classes.dex
-base.4=C\:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
-base.3=C\:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+base.3=C\:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
 base.2=C\:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
 base.1=C\:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.0=C\:\\PerProjects\\AndroidPIeBluetoothMouse\\SandBox_BluetoothChat\\Application\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
@@ -13,4 +11,3 @@ renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-renamed.4=classes5.dex

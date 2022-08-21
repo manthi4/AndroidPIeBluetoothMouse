@@ -28,6 +28,14 @@
         android:layout_weight="3"
         android:orientation="vertical">
 
+        <SeekBar
+            android:id="@+id/seekBar"
+            style="@android:style/Widget.Material.SeekBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:progressTint="#4CAF50" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,13 +98,16 @@
                 android:layout_weight="1" />
         </LinearLayout>
 
+
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2" />
+        android:layout_weight="2" >
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </LinearLayout>

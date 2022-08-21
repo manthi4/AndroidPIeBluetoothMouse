@@ -1,4 +1,4 @@
-package com.example.android.bluetoothchat;
+package com.example.android.bluetoothmouse;
 
 public class Bdevice {
     public String deviceName;

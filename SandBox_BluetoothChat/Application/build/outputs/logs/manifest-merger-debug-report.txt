@@ -32,7 +32,7 @@ INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Appl
 INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-49:12
 INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:17:1-49:12
 	package
-		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:20:5-48
+		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:20:5-49
 		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
 		INJECTED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml
 	android:versionName
@@ -75,7 +75,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\su
 		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:30:9-35
 	android:theme
 		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:33:9-40
-activity#com.example.android.bluetoothchat.MainActivity
+activity#com.example.android.bluetoothmouse.MainActivity
 ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:36:9-44:20
 	android:label
 		ADDED from C:\PerProjects\AndroidPIeBluetoothMouse\SandBox_BluetoothChat\Application\src\main\AndroidManifest.xml:39:13-45

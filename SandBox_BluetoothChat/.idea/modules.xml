@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/BluetoothChat.Application.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/BluetoothChat.Application.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SandBox_BluetoothChat.iml" filepath="$PROJECT_DIR$/.idea/modules/SandBox_BluetoothChat.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/SandBox_BluetoothChat.Application.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/SandBox_BluetoothChat.Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/SandBox_BluetoothChat.Application.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/SandBox_BluetoothChat.Application.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/SandBox_BluetoothChat.Application.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/SandBox_BluetoothChat.Application.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/SandBox_BluetoothChat.Application.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/SandBox_BluetoothChat.Application.unitTest.iml" />
     </modules>
   </component>
 </project>
